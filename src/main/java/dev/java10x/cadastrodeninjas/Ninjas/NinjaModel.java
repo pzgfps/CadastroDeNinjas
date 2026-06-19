@@ -1,11 +1,14 @@
-package dev.java10x.cadastrodeninjas;
+package dev.java10x.cadastrodeninjas.Ninjas;
 
+import dev.java10x.cadastrodeninjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 // JPA = Java Persistence API, persistência de dados para BD
 @Entity // Transforma uma classe java em uma  entidade no Banco de Dados
 @Table(name = "tb_cadastro") // Gerando tabela de ninjas
-public class NinjaModel {
+public class NinjaModel extends MissoesModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,6 +16,7 @@ public class NinjaModel {
     private String nome;
     private String email;
     private int idade;
+    private List<MissoesModel> missoes;
 
     public NinjaModel() {
     }
