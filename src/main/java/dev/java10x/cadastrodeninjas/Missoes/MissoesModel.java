@@ -50,12 +50,4 @@ public class MissoesModel {
     public void setDificuldade(String dificuldade) {
         this.dificuldade = dificuldade;
     }
-
-    @Override
-    public String toString() {
-        return "MissoesModel{" +
-                "missao='" + missao + '\'' +
-                ", dificuldade='" + dificuldade + '\'' +
-                '}';
-    }
 }
