@@ -1,4 +1,4 @@
-package dev.java10x.cadastrodeninjas.Ninjas;
+package dev.java10x.cadastrodeninjas;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
