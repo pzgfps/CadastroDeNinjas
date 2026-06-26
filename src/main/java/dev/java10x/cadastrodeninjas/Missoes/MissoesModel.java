@@ -6,11 +6,11 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "tb_missoes")
+@Table(name = "tb_missoes") // Criando a tabela tb_missoes
 public class MissoesModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)     // Gerando o valor do ID automaticamente (0 - 10000)
     private Long id;
     private String missao;
     private String dificuldade;
@@ -18,36 +18,4 @@ public class MissoesModel {
     @OneToMany(mappedBy = "missoes") // Um ninja só pode ter uma missão atribuida
     private List<NinjaModel> ninja;
 
-    public MissoesModel() {
-    }
-
-    public MissoesModel(Long id, String missao, String dificuldade) {
-        this.id = id;
-        this.missao = missao;
-        this.dificuldade = dificuldade;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getMissao() {
-        return missao;
-    }
-
-    public void setMissao(String missao) {
-        this.missao = missao;
-    }
-
-    public String getDificuldade() {
-        return dificuldade;
-    }
-
-    public void setDificuldade(String dificuldade) {
-        this.dificuldade = dificuldade;
-    }
 }
