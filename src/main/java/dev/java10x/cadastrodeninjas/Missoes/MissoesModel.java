@@ -1,5 +1,6 @@
 package dev.java10x.cadastrodeninjas.Missoes;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.java10x.cadastrodeninjas.Ninjas.NinjaModel;
 import jakarta.persistence.*;
 
@@ -12,10 +13,13 @@ public class MissoesModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)     // Gerando o valor do ID automaticamente (0 - 10000)
     private Long id;
+
     private String missao;
+
     private String dificuldade;
 
     @OneToMany(mappedBy = "missoes") // Um ninja só pode ter uma missão atribuida
-    private List<NinjaModel> ninja;
+    @JsonIgnore
+    private List<NinjaModel> ninjas;
 
 }

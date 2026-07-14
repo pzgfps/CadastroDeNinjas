@@ -38,4 +38,5 @@ public class NinjaModel  {
     @ManyToOne      // Uma missão pode ter vários ninjas
     @JoinColumn (name = "missoes_id")  // Foreign key - Chave estrangeira
     private MissoesModel missoes;
+
 }
