@@ -8,10 +8,12 @@ import java.util.List;
 @RequestMapping("/ninjas")
 public class NinjaController {
 
+    private final NinjaRepository ninjaRepository;
     private NinjaService ninjaService;
 
-    public NinjaController(NinjaService ninjaService) {
+    public NinjaController(NinjaService ninjaService, NinjaRepository ninjaRepository) {
         this.ninjaService = ninjaService;
+        this.ninjaRepository = ninjaRepository;
     }
 
     // Definindo a URL (rota) do site
@@ -22,7 +24,9 @@ public class NinjaController {
 
     // Adicionar novo Ninja (CREATE)
     @PostMapping("/criar")
-    public String criarNinja() { return "Ninja criado!";}
+    public NinjaModel criarNinja(@RequestBody NinjaModel ninja) {
+        return ninjaService.criarNinja(ninja);
+    }
 
     // Mostrar todos os ninjas (READ)
     @GetMapping("/listar")
@@ -38,10 +42,14 @@ public class NinjaController {
 
     // Alterar dados dos ninjas (UPDATE)
     @PutMapping("/alterar")
-    public String alterarNinjaPorID() { return "Alterando ninja por ID"; }
+    public String alterarNinjaPorID() {
+        return "Alterando ninja por ID";
+    }
 
     // Deletar ninja (DELETE)
     @DeleteMapping("/deletarID")
-    public String deletarNinjaPorID() { return "Deletando ninja por ID"; }
+    public String deletarNinjaPorID() {
+        return "Deletando ninja por ID";
+    }
 
 }
