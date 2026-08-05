@@ -41,15 +41,16 @@ public class NinjaController {
     }
 
     // Alterar dados dos ninjas (UPDATE)
-    @PutMapping("/alterar")
-    public String alterarNinjaPorID() {
-        return "Alterando ninja por ID";
+    @PutMapping("/alterar/{id}")
+    public NinjaModel alterarNinjaPorID(@PathVariable Long id, @RequestBody NinjaModel ninjaAtualizado) {
+        return ninjaService.alterarNinjaPorID(id, ninjaAtualizado);
     }
 
-    // Deletar ninja (DELETE)
-    @DeleteMapping("/deletarID")
-    public String deletarNinjaPorID() {
-        return "Deletando ninja por ID";
+    // Deletar ninja (DELETE) - É necessário colocar o id que o usuario deseja deletar na URL (@PathVariable)
+    @DeleteMapping("/deletar/{id}")
+    public void deletarNinjaPorID(@PathVariable Long id) {
+        ninjaService.deletarNinjaPorID(id);
     }
+
 
 }

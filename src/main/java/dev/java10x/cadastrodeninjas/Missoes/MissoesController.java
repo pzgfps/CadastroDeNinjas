@@ -35,14 +35,19 @@ public class MissoesController {
     }
 
     // Alterar dados da missão (UPDATE)
-    @PutMapping("/alterar")
-    public String alterarMissaoPorID() {
-        return "Alterando missão por ID";
+    @PutMapping("/alterar/{id}")
+    public MissoesModel alterarMissaoPorID(@PathVariable Long id, @RequestBody MissoesModel missaoAtualizada) {
+        return missoesService.alterarMissaoPorID(id, missaoAtualizada);
     }
 
     // Deletar missão (DELETE)
-    @DeleteMapping("/deletarID")
-    public String deletarMissaoPorID() {
-        return "Deletando missão por ID";
+    @DeleteMapping("/deletarmissao/{id}")
+    public void deletarMissaoPorID(@PathVariable Long id) {
+        missoesService.deletarMissaoPorID(id);
+    }
+
+    @PostMapping("/alterarmissao/{id}")
+    public MissoesModel alterarMissao(@PathVariable Long id, @RequestBody MissoesModel missaoAtualizada) {
+        return missoesService.alterarMissaoPorID(id, missaoAtualizada);
     }
 }

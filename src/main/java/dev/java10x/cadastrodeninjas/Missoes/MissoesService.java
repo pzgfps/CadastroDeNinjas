@@ -30,4 +30,17 @@ public class MissoesService {
         return missoesRepository.save(missao);
     }
 
+    // Deletar Missão por ID - Retornar void (@PathVariable)
+    public void deletarMissaoPorID(Long id) {
+        missoesRepository.deleteById(id);
+    }
+    // Atualizar os dados de uma Missão
+    public MissoesModel alterarMissaoPorID(Long id, MissoesModel missaoAtualizada) {
+        if (missoesRepository.existsById(id)) {
+            missaoAtualizada.setId(id);
+            return missoesRepository.save(missaoAtualizada);
+        }
+        return null;
+    }
+
 }
