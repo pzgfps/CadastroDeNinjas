@@ -32,6 +32,9 @@ public class NinjaModel  {
     @Column(name = "img_url")   // Criando a coluna imgUrl com o nome 'img_url" (ela normalmente cria sozinha com o mesmo nome)
     private String imgUrl;
 
+    @Column(name = "rank")
+    private String rank;
+
     @Column(name = "idade")     // Criando a coluna idade com o nome 'idade' (ela normalmente cria sozinha com o mesmo nome)
     private int idade;
 
