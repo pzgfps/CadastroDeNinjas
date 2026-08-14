@@ -35,7 +35,7 @@ public class NinjaController {
     public ResponseEntity<List<NinjaDTO>> mostrarTodosOsNinjas() {
         List<NinjaDTO> ninjas = ninjaService.listarNinjas();
         return ResponseEntity.ok()
-                    .body(ninjas);
+                .body(ninjas);
     }
 
     // Mostrar ninja por ID (READ)
@@ -70,9 +70,8 @@ public class NinjaController {
             ninjaService.deletarNinjaPorID(id);
             return ResponseEntity.ok("Ninja com o id: " + id + " deletado com sucesso");
         } else {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                        .body("O Ninja com o ID " + id + " não foi encontrado");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body("O Ninja com o ID " + id + " não foi encontrado");
         }
     }
-
 }

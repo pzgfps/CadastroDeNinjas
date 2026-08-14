@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 // Criando todos os getters e setter (Lombok faz automaticamente)
 import lombok.Data;
+import lombok.ToString;
 
 import java.util.List;
 
@@ -16,6 +17,7 @@ import java.util.List;
 @Data                   // Lombok - cria os getters e setters sozinho
 @NoArgsConstructor      // Lombok - cria automaticamente os construtores, vazios e cheios
 @AllArgsConstructor
+@ToString(exclude = "missoes")
 public class NinjaModel  {
 
     @Id
