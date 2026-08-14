@@ -10,12 +10,10 @@ import java.util.List;
 @RequestMapping("/ninjas")
 public class NinjaController {
 
-    private final NinjaRepository ninjaRepository;
-    private NinjaService ninjaService;
+    private final NinjaService ninjaService;
 
-    public NinjaController(NinjaService ninjaService, NinjaRepository ninjaRepository) {
+    public NinjaController(NinjaService ninjaService) {
         this.ninjaService = ninjaService;
-        this.ninjaRepository = ninjaRepository;
     }
 
     // Definindo a URL (rota) do site
